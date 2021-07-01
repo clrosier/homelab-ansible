@@ -1,0 +1,7 @@
+---
+- name: Install Prometheus Master Server
+  hosts: prometheus_server
+  become: yes
+
+  roles:
+    - prometheus

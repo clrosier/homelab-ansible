@@ -1,0 +1,21 @@
+[raspberry_pi]
+192.168.2.17        #kube-master01
+192.168.2.19        #kube-worker01
+192.168.2.16        #kube-worker02
+
+
+[nexus_server]
+192.168.2.17        #kube-master01
+
+
+[prometheus_server]
+192.168.2.16        #kube-worker02
+
+
+[jenkins_controller]
+192.168.2.19        #kube-worker01
+
+
+[jenkins_agents]
+192.168.2.17        #kube-master01
+192.168.2.16        #kube-worker02

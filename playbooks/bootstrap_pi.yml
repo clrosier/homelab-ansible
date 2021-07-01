@@ -1,0 +1,9 @@
+---
+- name: Bootstrap fresh raspberry pis (or keep them up-to-date)
+  hosts: all
+  become: yes
+
+  roles:
+    - update_package_manager
+    - docker
+    # - node_exporter

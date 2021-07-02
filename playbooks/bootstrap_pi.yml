@@ -6,4 +6,4 @@
   roles:
     - update_package_manager
     - docker
-    # - node_exporter
+    - node_exporter

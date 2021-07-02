@@ -31,6 +31,7 @@
 
 - name: move files into version folder
   command: "mv {{ prometheus_versions_folder }}/prometheus-{{ prometheus_version }}.linux-arm64 {{ prometheus_versions_folder }}/{{ prometheus_version }}"
+  ignore_errors: yes
   
 - name: ensure ownership
   command: "chown {{ prometheus_user }}:{{ prometheus_group }} -R {{ prometheus_folder }}"

@@ -26,3 +26,11 @@ scrape_configs:
 
     static_configs:
     - targets: ['localhost:9090']
+
+  - job_name: 'raspberry pis'
+    static_configs:
+      - targets: [
+        '192.168.2.16:9100',
+        '192.168.2.17:9100',
+        '192.168.2.19:9100'
+      ]

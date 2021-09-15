@@ -19,15 +19,30 @@
 
 - name: download node exporter binary
   unarchive:
-    src: "{{ node_exporter_download_url }}"
+    src: "{{ node_exporter_download_url_aarch }}"
     dest: "{{ node_exporter_versions_folder }}"
     remote_src: yes
   notify:
     - restart
+  when: "ansible_architecture == 'aarch64'"
+
+- name: download node exporter binary
+  unarchive:
+    src: "{{ node_exporter_download_url_amd64 }}"
+    dest: "{{ node_exporter_versions_folder }}"
+    remote_src: yes
+  notify:
+    - restart
+  when: "ansible_architecture == 'x86_64'"
 
 - name: move files into version folder
   command: "mv {{ node_exporter_versions_folder }}/node_exporter-{{ node_exporter_version }}.linux-arm64 {{ node_exporter_versions_folder }}/{{ node_exporter_version }}"
-  
+  when: "ansible_architecture == 'aarch64'"
+
+- name: move files into version folder
+  command: "mv {{ node_exporter_versions_folder }}/node_exporter-{{ node_exporter_version }}.linux-amd64 {{ node_exporter_versions_folder }}/{{ node_exporter_version }}"
+  when: "ansible_architecture == 'x86_64'"
+
 - name: ensure ownership
   command: "chown {{ node_exporter_user }}:{{ node_exporter_group }} -R {{ node_exporter_folder }}"
 

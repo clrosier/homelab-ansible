@@ -1,0 +1,7 @@
+---
+- name: Install Grafana Server
+  hosts: grafana_server
+  become: yes
+
+  roles:
+    - grafana

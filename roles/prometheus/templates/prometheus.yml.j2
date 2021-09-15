@@ -34,3 +34,22 @@ scrape_configs:
         '192.168.2.17:9100',
         '192.168.2.19:9100'
       ]
+
+  - job_name: 'lifty'
+    static_configs:
+      - targets: [
+        '3.238.254.34:9100'
+      ]
+  
+  - job_name: 'mc_server'
+    static_configs:
+      - targets: [
+        '3.98.150.62:9100'
+      ]
+  
+  - job_name: '6ixcraft'
+    static_configs:
+      - targets: [
+        '3.98.150.62:9225'
+      ]
+  

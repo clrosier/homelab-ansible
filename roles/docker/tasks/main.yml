@@ -14,10 +14,17 @@
     url: "https://download.docker.com/linux/ubuntu/gpg"
     state: present
 
-- name: Add docker repository to apt sources
+- name: Add docker repository to apt sources (raspberry pi)
   apt_repository:
     repo: "deb [arch=arm64] https://download.docker.com/linux/ubuntu focal stable"
     state: present
+  when: "ansible_architecture == 'aarch64'"
+
+- name: Add docker repository to apt sources (Ubuntu non-arch)
+  apt_repository:
+    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+    state: present
+  when: "ansible_architecture == 'x86_64'"
 
 - name: Update apt & install Docker
   apt:

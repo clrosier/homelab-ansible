@@ -1,9 +1,9 @@
 ---
-- name: Bootstrap fresh raspberry pis (or keep them up-to-date)
-  hosts: all
+- name: Bootstrap servers (or keep them up-to-date)
+  hosts: lifty_server
   become: yes
 
   roles:
-    - update_package_manager
+    # - update_package_manager
     - docker
-    - node_exporter
+    # - node_exporter

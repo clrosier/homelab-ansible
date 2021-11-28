@@ -1,9 +1,0 @@
----
-prometheus_version: "2.28.1"
-prometheus_download_url: "https://github.com/prometheus/prometheus/releases/download/v{{ prometheus_version }}/prometheus-{{ prometheus_version }}.linux-arm64.tar.gz"
-prometheus_user: "prometheus"
-prometheus_group: "prometheus"
-
-prometheus_folder: /opt/prometheus
-prometheus_config_folder: /opt/prometheus/config
-prometheus_versions_folder: /opt/prometheus/versions

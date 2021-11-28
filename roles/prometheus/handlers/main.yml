@@ -1,5 +1,0 @@
-- name: restart
-  systemd:
-    state: restarted
-    daemon-reload: yes
-    name: prometheus

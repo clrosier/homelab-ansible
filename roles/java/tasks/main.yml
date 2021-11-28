@@ -1,5 +1,0 @@
----
-- name: install java with apt
-  apt:
-    name: openjdk-11-jdk
-    state: latest

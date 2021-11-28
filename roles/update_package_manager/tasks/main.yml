@@ -1,8 +1,0 @@
----
-- name: Update all apt packages (ubuntu)
-  apt:
-    update_cache: yes
-  
-- name: Upgrade OS
-  apt:
-    upgrade: dist
